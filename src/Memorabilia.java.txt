@@ -194,3 +194,22 @@ public class Memorabilia {
         
         return categorias[indPelicula-1];
     }
+public void prestamoPeliculas() {
+
+        mostrarCliente();
+        System.out.print("Elija el numero de cliente: ");
+        int numCliente = scan.nextInt();
+
+        if (PeliculaPrestada[numCliente-1] == false) {
+            mostrarPeliculasDisponibles();
+            System.out.println("Elija el numero de la pelicula: ");
+            int numPelicula = scan.nextInt();
+            System.out.print("Elija numero de dias a prestar: ");
+            int numDias = scan.nextInt();
+            ejecutarPrestamo((numCliente-1),(numPelicula-1), numDias);
+
+        } else {
+            System.out.println("El cliente no puede pedir otra pelicula");
+        }
+        
+    }

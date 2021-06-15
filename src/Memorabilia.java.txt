@@ -156,5 +156,28 @@ public class Memorabilia {
 
     }
 
-   
+   public void ingresoPeliculas() {
+
+        System.out.print("");
+        System.out.print("Ingrese el nombre de la pelicula: ");
+        String nombrePelicula = scanner.nextLine();
+        String categoria = asignarCategoria();
+        System.out.print("\nIngrese el anio de la pelicula: ");
+        int anioPelicula = scan.nextInt();
+
+        for (int i = 0; i < cantidadPeliculas; i++) {
+            if (nombreCategoria[i][0]==null) {
+
+                nombreCategoria[i][0] = nombrePelicula;
+                nombreCategoria[i][1] = categoria;
+                idAnioPrestamo[i][0] = generarIdPeliculas();
+                idAnioPrestamo[i][1] = anioPelicula;
+                idAnioPrestamo[i][2] = 0;
+                disponibilidad[i] = true;
+                break;
+            }
+        }
+        
+
+    }
     

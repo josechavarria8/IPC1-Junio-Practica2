@@ -298,5 +298,37 @@ public int generarID(){
 
     }
 
-    
+    public void ordenarNombrePeliculas() {
+        for (int i = 0; i < cantidadClientes; i++) {
+            for (int j = 0; j < cantidadClientes-1; j++) {
+                if ((nombreCategoria[j][0]!=null)&&(nombreCategoria[j+1][0]!=null)&&(nombreCategoria[j][0].compareToIgnoreCase(nombreCategoria[j+1][0])>0)) {
+                    String auxiliar = nombreCategoria[j][0];
+                    nombreCategoria[j][0] = nombreCategoria[j+1][0];
+                    nombreCategoria[j+1][0] = auxiliar;
+
+                    auxiliar = nombreCategoria[j][1];
+                    nombreCategoria[j][1] = nombreCategoria[j+1][1];
+                    nombreCategoria[j+1][1] = auxiliar;
+
+                    int auxi = idAnioPrestamo[j][0];
+                    idAnioPrestamo[j][0] = idAnioPrestamo[j+1][0];
+                    idAnioPrestamo[j+1][0] = auxi;
+
+                    auxi = idAnioPrestamo[j][1];
+                    idAnioPrestamo[j][1] = idAnioPrestamo[j+1][1];
+                    idAnioPrestamo[j+1][1] = auxi;
+
+                    auxi = idAnioPrestamo[j][2];
+                    idAnioPrestamo[j][2] = idAnioPrestamo[j+1][2];
+                    idAnioPrestamo[j+1][2] = auxi;
+
+                    boolean aux = disponibilidad[j];
+                    disponibilidad[j] = disponibilidad[j+1];
+                    disponibilidad[j+1] = aux;
+
+                }
+            }
+        }
+    }
+
     

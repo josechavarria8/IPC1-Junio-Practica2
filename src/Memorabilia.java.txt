@@ -273,7 +273,17 @@ public int generarID(){
             }
         }
     }
-    
-    
+    public void mostrarTodasPeliculas(){
+
+        System.out.println("Peliculas");
+
+        for (int i = 0; i < cantidadPeliculas; i++) {
+            if (idAnioPrestamo[i][0] != 0) {
+                System.out.println((i+1)+".  ID: "+idAnioPrestamo[i][0]+",   Nombre: "+nombreCategoria[i][0]+",   Anio: "+idAnioPrestamo[i][1]+",   Categoria: "+nombreCategoria[i][1]+",   Estado: "+estadoPelicula(disponibilidad[i]));
+            }
+        }
+
+    }
+
     
     

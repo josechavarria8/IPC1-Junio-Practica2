@@ -180,6 +180,8 @@ public class Memorabilia {
         
 
     }
+
+
     public String asignarCategoria() {
 
                System.out.print("");
@@ -194,7 +196,18 @@ public class Memorabilia {
         
         return categorias[indPelicula-1];
     }
-public void prestamoPeliculas() {
+ 	public int generarIdPeliculas(){
+        int ID = 0;
+       for (int i = 0; i < cantidadPeliculas; i++) {
+        ID = (int)(Math.random()*(100-1)+1);
+           if (idAnioPrestamo[i][0]!=ID &&  idAnioPrestamo[i][0] == 0) {   
+               break;
+           }
+       }  
+        return ID;
+    }
+
+	public void prestamoPeliculas() {
 
         mostrarCliente();
         System.out.print("Elija el numero de cliente: ");

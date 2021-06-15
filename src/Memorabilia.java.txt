@@ -180,4 +180,17 @@ public class Memorabilia {
         
 
     }
-    
+    public String asignarCategoria() {
+
+               System.out.print("");
+        System.out.println("Seleccione una categoria");
+
+        for (int i = 0; i < categorias.length; i++) {
+            System.out.println((i+1)+". "+categorias[i]);
+        }
+
+        System.out.print("Escriba el numero de la categoria: ");
+        int indPelicula = scan.nextInt();
+        
+        return categorias[indPelicula-1];
+    }

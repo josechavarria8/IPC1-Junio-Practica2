@@ -352,3 +352,11 @@ public int generarID(){
         }
 
     }
+ public void mostrarCliente() {
+
+        for (int i = 0; i < cantidadClientes; i++) {
+            if (nombreClientes[i] != null) {
+                System.out.println((i+1)+".  ID: "+idTelClientes[i][0]+",   Nombre: "+nombreClientes[i]+",   Telefono: "+idTelClientes[i][1]+",  Estado de Prestamo: "+estadoCliente(PeliculaPrestada[i]));
+            }
+        }
+    }

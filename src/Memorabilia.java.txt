@@ -1,0 +1,160 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author blue
+ */
+import java.util.Scanner;
+public class Memorabilia {
+
+
+
+    
+    public static void main(String[] args) {
+        Memorabilia m = new Memorabilia();
+    }
+
+    Scanner scanner = new Scanner(System.in);
+    Scanner scan = new Scanner(System.in);
+
+    //CLIENTES
+    final int cantidadClientes = 30;
+    String[] nombreClientes = new String[cantidadClientes];
+    int[][] idTelClientes = new int[cantidadClientes][2];
+    boolean[] PeliculaPrestada = new boolean[cantidadClientes];
+
+    //PELICULAS
+    final int cantidadPeliculas = 30;
+    String[][] nombreCategoria = new String[cantidadClientes][2];
+    int[][] idAnioPrestamo = new int[cantidadClientes][3];
+    boolean[] disponibilidad = new boolean[cantidadClientes];
+    String[] categorias = new String[5];
+
+    //PRESTAMOS
+    int[][] prestamos = new int[30][3];
+    String[][] peliculaCliente = new String[30][2];
+
+
+
+    public Memorabilia() {
+
+      
+
+        nombreCategoria[0][0] = "Mision de Rescate";
+        nombreCategoria[0][1] = "Accion";
+        nombreCategoria[1][0] = "Pasajeros";
+        nombreCategoria[1][1] = "Ciencia Ficcion";
+        nombreCategoria[2][0] = "Shrek";
+        nombreCategoria[2][1] = "Comedia";
+        nombreCategoria[3][0] = "Titanic";
+        nombreCategoria[3][1] = "Romantica";
+        nombreCategoria[4][0] = "Venom";
+        nombreCategoria[4][1] = "Ciencia Ficcion";
+
+        idAnioPrestamo[0][0] = 1;
+        idAnioPrestamo[0][1] = 2005;
+        idAnioPrestamo[0][2] = 0;
+        idAnioPrestamo[1][0] = 2;
+        idAnioPrestamo[1][1] = 1978;
+        idAnioPrestamo[1][2] = 0;
+        idAnioPrestamo[2][0] = 3;
+        idAnioPrestamo[2][1] = 2000;
+        idAnioPrestamo[2][2] = 0;
+        idAnioPrestamo[3][0] = 4;
+        idAnioPrestamo[3][1] = 2010;
+        idAnioPrestamo[3][2] = 0;
+        idAnioPrestamo[4][0] = 5;
+        idAnioPrestamo[4][1] = 1994;
+        idAnioPrestamo[4][2] = 0;
+
+
+        disponibilidad [0] = true;
+        disponibilidad [1] = true;
+        disponibilidad [2] = true;
+        disponibilidad [3] = true;
+        disponibilidad [4] = true;
+
+        categorias[0] = "Accion";
+        categorias[1] = "Comedia";
+        categorias[2] = "Ciencia Ficcion";        
+        categorias[3] = "Romantica";
+        categorias[4] = "Terror";
+        
+        
+        iniciarMenu();
+    }
+
+    public void iniciarMenu() {
+     int opcion;
+    do{
+        System.out.println("");
+        System.out.println("       Menu");
+        System.out.println("");
+        System.out.println("1.Prestamos de Peliculas");
+        System.out.println("2.Devolución de películas");
+        System.out.println("3.Mostrar las películas");
+        System.out.println("4.Ordenar películas de forma ascendente");
+        System.out.println("5.Ingreso de Películas");
+        System.out.println("6.Ingresar clientes nuevos");
+        System.out.println("7.Mostrar clientes");
+        System.out.println("8.Reportes");
+        System.out.println("9.Salir");
+       System.out.println("Elija una Opcion ");
+        opcion = scan.nextInt();
+        
+        switch (opcion) {
+            case 1: {
+              
+               prestamoPeliculas();
+            
+            }break;
+            case 2: {
+              
+                devolucionPeliculas();
+            
+
+            } break;
+            case 3: {
+              
+               mostrarTodasPeliculas();
+               
+            }break;
+            case 4: {
+                     
+                ordenarNombrePeliculas();
+                   
+            }break;
+            case 5: {
+                       
+                 ingresoPeliculas();
+            }break;
+            case 6: {
+                     
+                registrarCliente();
+                
+            }break;
+            case 7: {
+                       
+                mostrarCliente();
+                
+            }break;
+            case 8: {
+                reportes();
+            }break;
+            case 9: {
+            
+            }break;
+            default:
+            
+    }
+
+    }while(opcion != 9);
+
+    }
+
+   
+    

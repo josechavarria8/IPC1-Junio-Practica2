@@ -180,7 +180,27 @@ public class Memorabilia {
         
 
     }
+	public String estadoCliente(boolean estado) {
+        String estadoCliente;
 
+        if (estado == true) {
+            estadoCliente = "Activo";
+        } else {
+            estadoCliente = "No activo";
+        }
+        return estadoCliente;
+    }
+
+	 public String estadoPelicula(boolean estado) {
+        String estadoPelicula;
+
+        if (estado == true) {
+            estadoPelicula = "Disponible";
+        } else {
+            estadoPelicula = "No Disponible";
+        }
+        return estadoPelicula;
+    }
 
     public String asignarCategoria() {
 

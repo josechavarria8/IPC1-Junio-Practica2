@@ -233,3 +233,47 @@ public void prestamoPeliculas() {
         }
         
     }
+public int generarID(){
+        int ID = 0;
+       for (int i = 0; i < cantidadClientes; i++) {
+        ID = (int)(Math.random()*(999-100)+100);
+           if (idTelClientes[i][0]!=ID &&  idTelClientes[i][0] == 0) {   
+               break;
+           }
+       }  
+        return ID;
+    }
+
+    public void devolucionPeliculas() {
+
+        for (int i = 0; i < prestamos.length; i++) {
+            if (peliculaCliente[i][0] != null) {
+                System.out.println("Numero de Prestamo: "+(i+1)+"   Pelicula: " + peliculaCliente[i][0] + "   Cliente: " + peliculaCliente[i][1] + "   Id Cliente: "
+                        + prestamos[i][1]);
+            }
+        }
+
+        System.out.print("Elija el numero de prestamo: ");
+        int numPrestamo = scan.nextInt();
+        prestamos[numPrestamo-1][2] = 0;
+
+        for (int i = 0; i < cantidadClientes; i++) {
+            if (prestamos[numPrestamo-1][1] == idTelClientes[i][0]) {
+                PeliculaPrestada[i] = false;
+                prestamos[numPrestamo-1][1] = 0;
+                break;
+            }
+        }
+
+        for (int i = 0; i < cantidadPeliculas; i++) {
+            if (prestamos[numPrestamo-1][0] == idAnioPrestamo[i][0]) {
+                disponibilidad[i] = true;
+                prestamos[numPrestamo-1][0] = 0;
+                break;
+            }
+        }
+    }
+    
+    
+    
+    
